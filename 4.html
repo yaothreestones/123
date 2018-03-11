@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+    <input id="input" type="number">
+    <button onclick="input(1)">左侧入</button>
+    <button onclick="input(2)">右侧入</button>
+    <button onclick="input(3)">左侧出</button>
+    <button onclick="input(4)">右侧出</button>
+</label>
+    <ul id="ul">
+
+    </ul>
+<script type="text/javascript">
+    ul = document.getElementById('ul');
+    const input = function (num) {
+        var val = document.getElementById('input').value;
+        let li = document.createElement('li');
+        let node = document.createTextNode(val);
+        li.appendChild(node);
+        if(num === 1){
+            if(ul.children.length === 0){
+                if(val){
+                    ul.append(li);
+                }
+            }else {
+                ul.insertBefore(li,ul.firstChild)
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

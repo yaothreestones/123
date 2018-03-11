@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="a" style="height: 100px;width: 100px;background-color: aqua">点击
+    <input id="a" type="file" style="display: none;">
+</label>
+<button id="btn">获取file</button>
+<script type="text/javascript">
+    const fileup = document.getElementById('a');
+    const btn = document.getElementById('btn');
+    const b ={};
+    fileup.addEventListener('change',function () {
+        b.file = this.files[0];
+        console.log(b);
+    });
+    const formdata = new FormData();
+    formdata.append('file',b.file);
+    btn.addEventListener('click',function () {
+        console.log(b)
+    })
+
+
+
+
+</script>
+</body>
+</html>
